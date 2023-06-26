@@ -33,13 +33,17 @@ BankAccountManager: This class is responsible for managing bank accounts. The cl
 The class should implement the following functionalities:
 
 - Constructor: The class should initialize the accounts list as empty.
-- createAccount(ownerName): Creates a new account with the provided ownerName and adds it to the accounts list.
+- findAccount(accountNumber): Returns the founded account with given account number, else return null
+- createAccount(ownerName, accountNumber): Creates a new account with the provided ownerName and account number and adds it to the accounts list.
+Be careful! The account number should be unique! If the bank account exists, do not create another one with the same one, but display a 
+warning message to the user on the console.
 - deposit(accountNumber, amount): Deposits the specified amount into the account associated with the given accountNumber.
 - withdrawFromAccount(accountNumber, amount): Withdraws the specified amount from the account associated with the given accountNumber.
   Returns a String, "Amount withdraw successfully" if the withdraw was successfully or "Account not found" if the account
 does not exist or "Account's balance too low!" if the account's balance is under zero or less than the given amount.
-- getAccountBalance(accountNumber): Returns the balance of the account associated with the given accountNumber.
-**Ensure that you write the necessary test cases to verify the correctness of your implementation.**
+  - getAccountBalance(accountNumber): Returns the balance of the account associated with the given accountNumber, if the account
+  does not exist, it should returns -1.
+  **Ensure that you write the necessary test cases to verify the correctness of your implementation.**
 
 You are required to write a Java program that implements the above Bank Account Management System.
 It is not necessary to use main, it is enough if you try the application in tests. Pay attention, you can't withdraw 

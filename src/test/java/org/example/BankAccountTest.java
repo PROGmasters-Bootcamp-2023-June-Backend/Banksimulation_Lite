@@ -21,6 +21,13 @@ class BankAccountTest {
     }
 
     @Test
+    void testCreateAccountWithSameAccNumber() {
+        manager.createAccount("John Doe", "1");
+        manager.createAccount("John Soe", "1");
+        assertEquals(1, manager.getAccounts().size());
+    }
+
+    @Test
     void testDeposit() {
         manager.createAccount("John Doe", "1");
         manager.deposit("1", 1000.0);
