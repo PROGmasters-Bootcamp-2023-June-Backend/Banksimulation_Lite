@@ -12,7 +12,8 @@ BankAccount: This class represents a bank account. Each account should have the 
 - accountNumber (String): Represents the account number.
 - ownerName (String): Represents the owner's name.
 - balance (double): Represents the account balance.
-- The class should implement the following functionalities:
+  
+ The class should implement the following functionalities:
 
 - Constructor: The class should have a constructor that takes the accountNumber and ownerName as parameters. 
 - The balance should be set to 0 by default.
