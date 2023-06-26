@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.example</groupId>
-    <artifactId>WEEK_03_OOP_basics_hw</artifactId>
+    <artifactId>Banksimulation_light</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <dependencies>
