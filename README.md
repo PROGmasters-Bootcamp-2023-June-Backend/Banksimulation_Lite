@@ -3,6 +3,8 @@
 Create a simple Bank Account Management System that allows users to manage their bank accounts. The application 
 should be capable of creating accounts, depositing money, withdrawing money, and checking the balance.
 
+The tests are written, so you should work in TDD.
+
 Classes:
 
 BankAccount: This class represents a bank account. Each account should have the following variables:
@@ -42,5 +44,3 @@ does not exist or "Account's balance too low!" if the account's balance is under
 You are required to write a Java program that implements the above Bank Account Management System.
 It is not necessary to use main, it is enough if you try the application in tests. Pay attention, you can't withdraw 
 more money from a bank account than is on it, you can't have a negative value on the account.
-
-Try to cover as many cases as possible with tests.
