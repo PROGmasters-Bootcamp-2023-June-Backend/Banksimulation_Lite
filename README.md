@@ -41,7 +41,7 @@ warning message to the user on the console.
 - withdrawFromAccount(accountNumber, amount): Withdraws the specified amount from the account associated with the given accountNumber.
   Returns a String, "Amount withdraw successfully" if the withdraw was successfully or "Account not found" if the account
 does not exist or "Account's balance too low!" if the account's balance is under zero or less than the given amount.
-  - getAccountBalance(accountNumber): Returns the balance of the account associated with the given accountNumber, if the account
+- getAccountBalance(accountNumber): Returns the balance of the account associated with the given accountNumber, if the account
   does not exist, it should returns -1.
   **Ensure that you write the necessary test cases to verify the correctness of your implementation.**
 
