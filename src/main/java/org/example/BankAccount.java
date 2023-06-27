@@ -1,6 +1,5 @@
 package org.example;
 
-import java.sql.SQLOutput;
 
 public class BankAccount {
     private String accountNumber;

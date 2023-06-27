@@ -60,7 +60,7 @@ public class BankAccountManager {
         return bankAccount.getBalance();
     }
 
-    public List getAccounts() {
+    public ArrayList<BankAccount> getAccounts() {
         return bankAccounts;
     }
 }
