@@ -10,6 +10,7 @@ public class BankAccountManager {
 
     public BankAccountManager() {
         this.bankAccounts = new ArrayList<>();
+
     }
 
     public BankAccount findAccount(String accountNumber) {
