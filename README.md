@@ -3,7 +3,7 @@
 Create a simple Bank Account Management System that allows users to manage their bank accounts. The application 
 should be capable of creating accounts, depositing money, withdrawing money, and checking the balance.
 
-The tests are written, so you should work in TDD.
+The tests are ready, so you should work in TDD.
 
 Classes:
 
