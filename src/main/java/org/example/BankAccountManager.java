@@ -32,19 +32,15 @@ public class BankAccountManager {
 
     public void deposit(String accountNumber, double amount) {
         BankAccount bankAccount = findAccount(accountNumber);
-        try{
-            if(!bankAccount.getAccountNumber().equals(null)) {
-                bankAccount.setBalance(amount + bankAccount.getBalance());
-            }
-        } catch (NullPointerException nullPointerException) {
-            System.out.println(nullPointerException.getMessage());
+        if(bankAccount != null) {
+            bankAccount.setBalance(amount + bankAccount.getBalance());
         }
 
     }
 
     public String withdrawFromAccount(String accountNumber, double amount) {
         BankAccount bankAccount = findAccount(accountNumber);
-        if(bankAccount != (null)) {
+        if(bankAccount != null) {
             if (bankAccount.getBalance() < amount) {
                 return "Account's balance too low!";
             }
