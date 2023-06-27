@@ -6,6 +6,7 @@ import java.util.List;
 public class BankAccountManager {
 
     private List<BankAccount> accounts;
+    private boolean readyAccount = false;
 
 
     public BankAccountManager() {
@@ -13,61 +14,58 @@ public class BankAccountManager {
     }
 
     public void createAccount(String ownerName, String accountNumber) {
-        for (BankAccount bankAccount : accounts) {
-            if (!bankAccount.getAccountNumber().equals(accountNumber)) {
-                BankAccount bankAccountAdd = new BankAccount(accountNumber, ownerName);
-                accounts.add(bankAccountAdd);
-            } else {
-                System.out.println("I already have such an account number!");
-
-            }
+        findAccount(accountNumber);
+        if(!readyAccount){
+        BankAccount bankAccountAdd = new BankAccount(accountNumber, ownerName);
+        accounts.add(bankAccountAdd);
         }
+
     }
 
-    public BankAccount findAccount(String accountNumber) {
+    public boolean findAccount(String accountNumber) {
         for (BankAccount bankAccount : accounts) {
             if (bankAccount.getAccountNumber().equals(accountNumber)) {
-                System.out.println(bankAccount);
-                return bankAccount;
-            }else{
-            return null;
+                readyAccount = true;
+                return readyAccount;
             }
         }
-        return null;
+        readyAccount = false;
+        return readyAccount;
     }
 
-    public void deposit(String accountNumber, double amount){
+    public void deposit(String accountNumber, double amount) {
         for (BankAccount bankAccount : accounts) {
             if (bankAccount.getAccountNumber().equals(accountNumber)) {
                 bankAccount.deposit(amount);
-            }else{
-
             }
         }
     }
 
-    public String withdrawFromAccount(String accountNumber, double amount){
+    public String withdrawFromAccount(String accountNumber, double amount) {
         for (BankAccount bankAccount : accounts) {
             if (bankAccount.getAccountNumber().equals(accountNumber)) {
-                if(bankAccount.getBalance()>amount){
+                if (bankAccount.getBalance() > amount) {
                     bankAccount.withdraw(amount);
                     return "Amount withdraw successfully";
-                }else{
+                } else {
                     return "Account's balance too low!";
                 }
             }
         }
         return "Account not found";
     }
-    
-    public double getAccountBalance(String accountNumber){
+
+    public double getAccountBalance(String accountNumber) {
         for (BankAccount bankAccount : accounts) {
             if (bankAccount.getAccountNumber().equals(accountNumber)) {
                 return bankAccount.getBalance();
             }
         }
         return -1;
-        
+
     }
 
+    public List<BankAccount> getAccounts() {
+        return accounts;
+    }
 }
