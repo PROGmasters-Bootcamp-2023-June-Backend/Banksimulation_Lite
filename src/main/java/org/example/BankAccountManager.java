@@ -56,10 +56,14 @@ public class BankAccountManager {
         if (bankAccount == null) {
             System.out.println("Account not found");
             return "Account not found";
-        } else {
-            bankAccount.withdraw(amount);
-            return "Amount withdraw successfully";
         }
+
+        if (bankAccount.getBalance() < amount) {
+            return "Account's balance too low!";
+        }
+
+        bankAccount.withdraw(amount);
+        return "Amount withdraw successfully";
     }
 
     public double getAccountBalance(String accountNumber) {
