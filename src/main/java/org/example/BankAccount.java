@@ -1,20 +1,6 @@
 package org.example;
 
 public class BankAccount {
-    public static void main(String[] args) {
-        BankAccount bankAccount = new BankAccount("11273437","Kovács Géza");
-        bankAccount.deposit(12000);
-        bankAccount.deposit(4000);
-
-        System.out.println(bankAccount.getBalance());
-        System.out.println(bankAccount.getAccountNumber());
-
-        bankAccount.withdraw(17000);
-        bankAccount.withdraw(11000);
-        System.out.println(bankAccount.getBalance());
-        System.out.println(bankAccount);
-
-    }
 
     private String accountNumber;
     private String ownerName;
@@ -33,14 +19,13 @@ public class BankAccount {
         balance += amount;
     }
 
-    //TODO Subtracts the given amount from the account balance if there are sufficient funds.
 
-    public void withdraw(double amount) {
-       if (amount > balance) {
-           System.out.println("Insufficient funds");
-       }else{
-           balance -= amount;
-       }
+    public String withdraw(double amount) {
+        if ( balance >= amount) {
+            balance -= amount;
+            return "Amount withdraw successfully";
+        }
+            return "Account's balance too low!";
     }
 
     @Override
