@@ -20,7 +20,6 @@ public class BankAccountManager {
         return null;
     }
 
-    //    findAccount(number)
     public void createAccount(String name, String number) {
 
         BankAccount bankAccount = findAccount(number);
@@ -41,14 +40,13 @@ public class BankAccountManager {
     public String withdrawFromAccount(String accountNumber, double amount) {
         String text;
         BankAccount bankAccount = findAccount(accountNumber);
-        if (bankAccount != null) {
+        if (bankAccount != null && bankAccount.getBalance()-amount >0) {
             bankAccount.withdraw(amount);
             text = "Amount withdraw successfully";
+        } else if (bankAccount != null && bankAccount.getBalance()-amount < 0) {
+            text = "Account's balance too low!";
         } else {
             text = "Account not found";
-        }
-        if (bankAccount.getBalance() < 0 || bankAccount.getBalance() < amount){
-            text = "Account's balance too low!";
         }
         return text;
     }

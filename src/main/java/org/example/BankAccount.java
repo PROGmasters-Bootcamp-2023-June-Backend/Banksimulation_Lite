@@ -30,8 +30,6 @@ public class BankAccount {
     public void withdraw (double amount){
         if (balance - amount > 0) {
             this.balance -= amount;
-        }else{
-            System.out.println("Account's balance too low.");
         }
     }
 
